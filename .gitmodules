@@ -1,0 +1,8 @@
+[submodule "ipca-frontend"]
+	path = ipca-frontend
+	url = https://github.com/Project-IPCA/ipca-frontend.git
+	branch = develop
+[submodule "ipca-super-frontend"]
+	path = ipca-super-frontend
+	url = https://github.com/Project-IPCA/ipca-super-frontend.git
+	branch = develop
