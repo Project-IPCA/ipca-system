@@ -14,3 +14,7 @@
 	path = ipca-worker-go-v2
 	url = https://github.com/Project-IPCA/ipca-worker-go-v2.git
 	branch = develop
+[submodule "ipca-backend"]
+	path = ipca-backend
+	url = https://github.com/Project-IPCA/ipca-backend
+	branch = develop
