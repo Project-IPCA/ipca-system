@@ -27,8 +27,8 @@ http {
         listen 443 ssl;
         server_name ${STUDENT_SERVER_NAME};
 
-        ssl_certificate /etc/letsencrypt/live/gold41.ce.kmitl.ac.th/fullchain.pem;
-        ssl_certificate_key /etc/letsencrypt/live/gold41.ce.kmitl.ac.th/privkey.pem;
+        ssl_certificate ${SSL_CERTIFICATE};
+        ssl_certificate_key ${SSL_CERTIFICATE_KEY};
         
         location / {
             proxy_pass http://ipca-frontend:3000;
