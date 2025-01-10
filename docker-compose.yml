@@ -28,6 +28,8 @@ services:
       TZ: Asia/Bangkok
       SUPER_SERVER_NAME: ${SUPER_SERVER_NAME}
       STUDENT_SERVER_NAME: ${STUDENT_SERVER_NAME}
+      SSL_CERTIFICATE: ${SSL_CERTIFICATE}
+      SSL_CERTIFICATE_KEY: ${SSL_CERTIFICATE_KEY}
     command: /bin/bash /script-nginx.sh
     networks:
       - ipca-stack
