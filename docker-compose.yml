@@ -18,6 +18,7 @@ services:
     volumes:
       - ./proxy/prod/nginx.conf.template:/etc/nginx/nginx.conf.template
       - /etc/letsencrypt:/etc/letsencrypt
+      - ./script-nginx.sh:/script-nginx.sh
     ports:
       - 80:80
       - 443:443
