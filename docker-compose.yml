@@ -17,7 +17,8 @@ services:
     restart: always
     volumes:
       - ./proxy/prod/nginx.conf.template:/etc/nginx/nginx.conf.template
-      - /etc/letsencrypt:/etc/letsencrypt
+      - ${SSL_CERTIFICATE}:${SSL_CERTIFICATE}
+      - ${SSL_CERTIFICATE_KEY}:${SSL_CERTIFICATE_KEY}
       - ./script-nginx.sh:/script-nginx.sh
     ports:
       - 80:80
@@ -25,6 +26,9 @@ services:
       - 8301:8301
     environment:
       TZ: Asia/Bangkok
+      SUPER_SERVER_NAME: ${SUPER_SERVER_NAME}
+      STUDENT_SERVER_NAME: ${STUDENT_SERVER_NAME}
+    command: /bin/bash /script-nginx.sh
     networks:
       - ipca-stack
     depends_on:

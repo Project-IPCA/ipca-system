@@ -36,7 +36,7 @@ http {
 
         location /api/ {
             # Unified CORS Headers
-            add_header 'Access-Control-Allow-Origin' 'http://${SUPER_SERVER_NAME}' always;
+            add_header 'Access-Control-Allow-Origin' 'http://${SUPER_SERVER_NAME}:8301' always;
             add_header 'Access-Control-Allow-Methods' 'GET, PUT, POST, DELETE, OPTIONS' always;
             add_header 'Access-Control-Allow-Headers' 'Content-Type, Authorization' always;
             add_header 'Access-Control-Allow-Credentials' 'true' always;
@@ -62,7 +62,7 @@ http {
             proxy_cache off;
             proxy_read_timeout 24h;
 
-            add_header 'Access-Control-Allow-Origin' 'http://${SUPER_SERVER_NAME}' always;
+            add_header 'Access-Control-Allow-Origin' 'http://${SUPER_SERVER_NAME}:8301' always;
             add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, OPTIONS' always;
             add_header 'Access-Control-Allow-Headers' 'Content-Type, Authorization' always;
             add_header 'Access-Control-Allow-Credentials' 'true' always;
@@ -79,7 +79,7 @@ http {
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             proxy_connect_timeout 300;
 
-            add_header 'Access-Control-Allow-Origin' 'http://${SUPER_SERVER_NAME}' always;
+            add_header 'Access-Control-Allow-Origin' 'http://${SUPER_SERVER_NAME}:8301' always;
             add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, OPTIONS' always;
             add_header 'Access-Control-Allow-Headers' 'Content-Type, Authorization';
 
