@@ -23,11 +23,9 @@ services:
     ports:
       - 80:80
       - 443:443
-      - 8301:8301
     environment:
       TZ: Asia/Bangkok
-      SUPER_SERVER_NAME: ${SUPER_SERVER_NAME}
-      STUDENT_SERVER_NAME: ${STUDENT_SERVER_NAME}
+      SERVER_NAME: ${SERVER_NAME}
       SSL_CERTIFICATE: ${SSL_CERTIFICATE}
       SSL_CERTIFICATE_KEY: ${SSL_CERTIFICATE_KEY}
     command: /bin/bash /script-nginx.sh
@@ -46,7 +44,7 @@ services:
     expose:
       - ${REDIS_PORT}
     ports:
-      - ${REDIS_PORT}:${REDIS_PORT}
+      - 127.0.0.1:${REDIS_PORT}:${REDIS_PORT}
     networks:
       - ipca-stack
 
@@ -58,7 +56,7 @@ services:
     expose:
       - ${RABBITMQ_PORT}
     ports:
-      - 15672:15672
+      - 127.0.0.1:15672:15672
     environment:
       TZ: Asia/Bangkok
       RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER} # Set default RabbitMQ user
@@ -73,7 +71,7 @@ services:
     container_name: ipca-minio
     restart: unless-stopped
     ports:
-      - 9001:9001
+      - 127.0.0.1:9001:9001
     expose:
       - 9000
     environment:
@@ -108,7 +106,7 @@ services:
     container_name: ipca-phpmyadmin
     restart: always
     ports:
-      - 8081:80
+      - 127.0.0.1:8081:80
     environment:
       TZ: Asia/Bangkok
       PMA_HOST: ipca-mysql
